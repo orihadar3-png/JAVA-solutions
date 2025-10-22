@@ -1,3 +1,3 @@
 #!/bin/bash 
-git add . && git commit -m "עדכון אוטומטי" && git push
+git add . && git commit -m "Automatic update" && git push
 
