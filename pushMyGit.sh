@@ -5,12 +5,10 @@
 branch=${1:-temp-branch}
 echo "Using branch: $branch"
 
-# Save current timestamp to file
 d=$(date +"%Y-%m-%d_%H:%M:%S")
 echo "$d" > fileDatepush.txt
 echo "Timestamp saved to fileDatepush.txt"
 
-# Switch to branch or create it if missing
 if git rev-parse --verify "$branch" >/dev/null 2>&1; then
   echo "Switching to existing branch: $branch"
   git switch "$branch"
@@ -19,11 +17,9 @@ else
   git checkout -b "$branch"
 fi
 
-# Pull latest changes
 echo "Pulling latest changes from origin/$branch"
 git pull origin "$branch"
 
-# Check for changes
 if ! git diff --cached --quiet || ! git diff --quiet; then
   echo "Changes detected. Adding and committing..."
   git add .
@@ -34,8 +30,7 @@ else
   echo "No changes to commit."
 fi
 
-# Optional: merge into main and push
-if [ "$branch" != "main" ]; then
+  [ "$branch" != "main" ]; then
   echo "Merging $branch into main..."
   git switch main
   git pull origin main
