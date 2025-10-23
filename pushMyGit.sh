@@ -29,8 +29,7 @@ if ! git diff --cached --quiet || ! git diff --quiet; then
 else
   echo "No changes to commit."
 fi
-
-  [ "$branch" != "main" ]; then
+if[ "$branch" != "main" ]; then
   echo "Merging $branch into main..."
   git switch main
   git pull origin main
