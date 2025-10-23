@@ -1,2 +1,1 @@
-# JAVA-solutions
-# JAVA-solutions
+# התחלה חדשה
