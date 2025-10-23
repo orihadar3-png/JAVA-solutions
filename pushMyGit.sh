@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# קביעת תאריך ושעה
+# Get current date and time
 d=$(date +"%Y-%m-%d_%H:%M:%S")
 echo "$d" > fileDatepush.txt
 
-# מעבר לענף temp-branch (יוצר אותו אם לא קיים)
+# Switch to temp-branch (create if it doesn't exist)
 git checkout -B temp-branch
 
-# הוספת קבצים ל-commit
+# Stage all changes
 git add .
 
-# ביצוע commit אוטומטי
+# Commit with automatic message
 git commit -m "AutoUpdate"
 
-# משיכה מהענף לפני push
-git pull --rebase origin temp-branch
+# Pull latest changes from remote branch (no rebase to avoid errors)
+git pull origin temp-branch
 
-# שליחת השינויים לענף
+# Push changes to remote
 git push origin temp-branch
