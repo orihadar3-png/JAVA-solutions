@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Set branch name from argument or default to 'temp-branch'
-branch=${1:-temp-branch}
+# שם branch ברירת מחדל או לפי ארגומנט
+branch=${1:-main}
 echo "Using branch: $branch"
 
-# Save current timestamp to file
+# שמירת timestamp לקובץ
 d=$(date +"%Y-%m-%d_%H:%M:%S")
 echo "$d" > fileDatepush.txt
 echo "Timestamp saved to fileDatepush.txt"
 
-# Switch to branch or create it if missing
+# מעבר ל-branch או יצירה אם לא קיים
 if git rev-parse --verify "$branch" >/dev/null 2>&1; then
   echo "Switching to existing branch: $branch"
   git switch "$branch"
@@ -18,29 +18,16 @@ else
   git checkout -b "$branch"
 fi
 
-# Pull latest changes
-echo "Pulling latest changes from origin/$branch"
-git pull origin "$branch"
+# הוספת כל הקבצים
+echo "Adding all files..."
+git add .
 
-# Check for changes
-if ! git diff --cached --quiet || ! git diff --quiet; then
-  echo "Changes detected. Adding and committing..."
-  git add .
-  git commit -m "AutoUpdate"
-  echo "Pushing to origin/$branch"
-  git push origin "$branch"
-else
-  echo "No changes to commit."
-fi
+# ביצוע commit
+echo "Committing changes..."
+git commit -m "Upload all project files"
 
-# Optional: merge into main and push
-if [ "$branch" != "main" ]; then
-  echo "Merging $branch into main..."
-  git switch main
-  git pull origin main
-  git merge "$branch"
-  echo "Pushing merged changes to origin/main"
-  git push origin main
-fi
+# דחיפה ל-GitHub
+echo "Pushing to origin/$branch"
+git push origin "$branch" --force
 
 echo "Done."
