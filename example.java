@@ -46,4 +46,20 @@ public class Main {
         System.out.println("התו שהוזן הוא: " + c);
     }
 }
-
+////////////////////////////////////////////////////////////////////
+  System.out.println(Math.sqrt(10));
+      System.out.println(Math.pow(10,2));
+      System.out.println(Math.abs(-10));
+	  
+	  import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+      int  numberRandom=0;
+      for(int i=0;i<100;i++) {
+          numberRandom =(int) (((Math.random())*900)+100);
+          System.out.println(numberRandom);
+      }
+      }
+  }
+  
+  /////////////////////////////////////////////////////
