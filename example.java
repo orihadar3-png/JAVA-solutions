@@ -73,6 +73,39 @@ public class Main {
 
       }
     }
+	
+/////////////////////////////////////////////////////
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+    int [] array=new int [12];
+    int [] array1=new int [12];
+    int sum=0,max=0;
+    int leng =array.length;
+    for(int i=0;i<array.length;i++){
+        array[i]=(int) (Math.random()*10000);
+        if((int) (Math.random()*10)<5)
+            array[i]=(array[i] *(-1));
+    }
+
+
+    max=array[0];
+    for(int i=0;i<array.length;i++){
+       if(max<array[i]){
+          max=array[i];
+       }
+   }
+    System.out.println("max ="+max);
+
+    System.out.println("leng  "+leng);
+        for(int i=0;i<array.length;i++) {
+            System.out.print(array[i]+ "\t");
+           }
+        System.out.println(" ");
+        System.out.println(array[array.length-1]);
+        }
+
+    }
 ///////////////////////////////////////////////////////
 
 import java.util.Scanner;
@@ -107,3 +140,4 @@ public class Main {
         System.out.print(string2);
       }
     }
+////////////////////////////////////////////////////////////////
