@@ -49,8 +49,7 @@ public class Main {
       }
       }
   }
-  
-  /////////////////////////////////////////////////////
+ /////////////////////////////////////////////////////
   
 Java תוכל להגריל מספר רנדומלי בין 10 ל-100 כך:
 
@@ -59,22 +58,7 @@ System.out.println(random);
 
 
 ////////////////////////////////////////////////////////////
-import java.util.Scanner;
-public class Main {
-    public static void main(String[] args) {
-    Scanner scanner=new Scanner(System.in);
-     System.out.println("   הכנסה  שם  ");
-     String input1 =scanner.nextLine();
-     String input2 =scanner.nextLine();
-     System.out.println(input1.length());
-     for(int i=0;i<input.length();i++)
-             System.out.println(input1.charAt(i));
 
-
-      }
-    }
-	
-/////////////////////////////////////////////////////
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
