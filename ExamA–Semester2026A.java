@@ -90,7 +90,7 @@ public static int[] createArray(int size) {
     return evenSum == oddSum;
 }
 
-///   שאלה ב 
+///שאלה ב 
  public static int[] fill(int size, int x, int y) {
     int[] arr = new int[size];
      int evenSum = 0;
@@ -149,7 +149,14 @@ public static boolean isTriangular(int[] arr) {
 	   }
 	}
 	
-	
+	fgfg  fg 
+	fgfgfgfg
+	fgfgg
+	fg
+	gf
+	gff
+	gf  fgg 
+
 	*/ 
 	/*
 	
